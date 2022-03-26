@@ -22,17 +22,16 @@ else {
         const encodeBase64 = () => {
             let enc = document.getElementById("textLabel")
             enc.innerHTML = btoa(enc.innerText)
-            enc = btoa(enc)
         }
         const decodeBase64 = () => {
             let dec = document.getElementById("textLabel")
             dec.innerHTML = atob(dec.innerText)
         }
-        function imageLoaded() {
+        imageLoaded = () => {
             let message = document.getElementById("imageInfo")
             message.innerText = "The image is successfully loaded"
         }
-        function imageFailed() {
+        imageFailed = () => {
             let message = document.getElementById("imageInfo")
             message.innerText = "The image is not loaded due to an error"
         }
