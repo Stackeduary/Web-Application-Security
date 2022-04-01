@@ -1,3 +1,15 @@
+# Homework 2: Cookies and Clickjacking
+- `hw2part1.php?csp=[true,false]`
+  - Set a cookie `hwCookieName=hwCookieValue` so that it should be a session cookie and only available to `/hw2part1.php` [1p]
+  - Define a query parameter `csp` so that `false` would allow only same origin embed the page and `true` would not allow any pages. [1p]
+  - Query param csp must be set to either true or false. Reject the other cases with HTTP 200 and a message such as Your request is not accepted. [0.5p]
+- hw2part2.php?part=[1,2]
+  - `part=1` clickjack so that a click would click `Magic Button` in `hw2part1.php` [1p]
+  - `part=2` take `Password` and `Register` from `hw2part1.php` to perform registration using `Password` [1p]
+  - Query parameter `part` must be set to either `1` or `2`. Reject the other cases with HTTP 200 and a message such as 'Your request is not accepted'. [0.5p]
+
+
+
 # Homework 1: Simple Web Application
 - Submit a web application in a PHP file called homework1.php
 - Prepare an environment to execute PHP code yourself
