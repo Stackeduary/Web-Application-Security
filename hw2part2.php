@@ -37,14 +37,14 @@
     <body>
     <?php
         $message = "";
-        if (isset($_GET['part']) == '1') {
+        if (isset($_GET['part']) && $_GET['part'] == '1') {
             echo "<div id='div1' class='frame'><iframe src='/hw2part1.php?csp=false'></iframe></div>";
-        } elseif (isset($_GET['part']) == '2') {
+        } elseif (isset($_GET['part']) && $_GET['part'] == '2') {
             echo 
             '<p>
                 <form action="" method="post">
                     <label for="etext">E-Mail:</label>
-                    <input type="email" id="etext" name="emailValue" value=""bill@billisawesome.net"><br>
+                    <input type="email" id="etext" name="emailValue" value="bill@billisawesome.net"><br>
                     <label for="ptext">Password:</label>
                     <input type="password" id="ptext" name="passValue"> <br>
                     <input type="submit" value="Register">
