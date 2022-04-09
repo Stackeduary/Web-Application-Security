@@ -1,6 +1,6 @@
 # Homework 3: Cross-Site Scripting
 - Given https://webappsec.cs.ut.ee/xss/
-- Implement a DOM XSS attack such that it will insert the cookie `SESSIONID=CompetitiveDomainCookie` with a different domain and an expiry time[2p]
+- Implement a DOM XSS attack such that it will insert the cookie `SESSIONID=CompetitiveDomainCookie` with a different domain and an expiry time [2p]
 - Prepare an HTML file `autosubmit.html` that sends a payload to https://webappsec.cs.ut.ee/xss/homework.php when it is loaded in the browser [1p]
 - Implement a POST-based Reflected XSS attack such that when a user mouses over the search result, it will insert the cookie `searchTerm=CompetitivePathCookie` with a longer path [2p]
 - Create an HTML file `homework.html` that links to the first DOM XSS attack and `autosubmit.html`
