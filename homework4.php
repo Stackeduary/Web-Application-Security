@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     setcookie('doubleSubmit', $doubleSubmitHash);
     if(isset($_COOKIE['SESSIONID']) and $_COOKIE['SESSIONID'] == "TestSession") {
         echo "<form action\"\" method=\"post\">";
-        echo "<h1>Write a comment <input type=\"text\" name=\"message\"><h1>";
+        echo "<h1>Write a comment</h1> <input type=\"text\" name=\"message\">";
         echo "<input type=\"hidden\" name=\"doubleSubmit\" value=\"".$doubleSubmit."\">";
         echo "<p><input type=\"submit\" value=\"Send\"></p></form></body></html>";
         exit;
